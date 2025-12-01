@@ -3,7 +3,9 @@
 	src: url(”Fonts/pudelinka.ttf” ) format('truetype’);
 	font-weight: normal;
 	font-style: normal;
-}body {
+}
+
+body {
 	background-color: #d2b48c;
 	margin-left: 20%;
 	margin-right: 20%;
