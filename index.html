@@ -6,6 +6,55 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>8 апреля, 2026</h2>
+  graph TD
+    %% Определение стилей для блоков
+    classDef patient fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef surgeon fill:#ccf,stroke:#333,stroke-width:2px;
+    classDef operation fill:#ffc,stroke:#333,stroke-width:2px;
+
+    %% Узлы (Блоки)
+    subgraph Пациент
+        P1["ID: 123"]
+        P2["ФИО: Хамилова Настя Салимова"]
+        P3["Адрес: Город Москва, улица Ленина, дом 2"]
+    end
+
+    subgraph Хирург
+        S1["ID: 123"]
+        S2["Имя: Роман"]
+    end
+
+    subgraph Операция_1
+        O1_Date["Дата: 26.04.2020"]
+        O1_Type["Тип: Удаление аппендицита"]
+        O1_Med["Лекарство: Антибиотик флемоксин"]
+        O1_Comp["Осложнение: Гнойное воспаление, клейчатка"]
+    end
+
+    subgraph Операция_2
+        O2_Date["Дата: 26.04.2020"]
+        O2_Type["Тип: Удаление раковой опухоли"]
+        O2_Med["Лекарство: Антибиотик"]
+        O2_Comp["Осложнение: Кровотечение"]
+    end
+
+    %% Связи (Стрелки)
+    P1 -->|Пациент| O1_Date
+    P2 -->|Пациент| O1_Date
+    S1 -->|Хирург| O1_Date
+    S2 -->|Хирург| O1_Date
+
+    P1 -->|Пациент| O2_Date
+    P2 -->|Пациент| O2_Date
+    
+    %% Стилизация узлов
+    class P1,P2,P3 patient;
+    class S1,S2 surgeon;
+    class O1_Date,O1_Type,O1_Med,O1_Comp,O2_Date,O2_Type,O2_Med,O2_Comp operation;
+
+    %% Направление связей внутри подграфов (для визуального соответствия таблице)
+    linkStyle default interpolate basis
    <h2>30 марта, 2026</h2>
   Изначально:
     <p>Итоговые результаты: <p>
